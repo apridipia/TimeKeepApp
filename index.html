@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeKeep - Professional Time Tracking</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background: #0f0f0f;
+            color: #f5f5f7;
+            line-height: 1.6;
+            min-height: 100vh;
+            font-weight: 400;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .header {
+            background: rgba(15, 15, 15, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #f5f5f7;
+            letter-spacing: -0.02em;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 6rem 0 4rem;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #f5f5f7;
+            letter-spacing: -0.04em;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 3rem;
+            color: #a1a1a6;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        .app-store-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #f5f5f7;
+            color: #1d1d1f;
+            padding: 12px 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .app-store-button:hover {
+            background: #e8e8ed;
+            transform: scale(1.02);
+        }
+
+        .features {
+            padding: 6rem 0;
+            background: #0f0f0f;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .feature {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .feature:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: #f5f5f7;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        .feature p {
+            color: #a1a1a6;
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #f5f5f7;
+            margin-bottom: 1rem;
+            letter-spacing: -0.03em;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #a1a1a6;
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
+        .footer {
+            background: rgba(255, 255, 255, 0.02);
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .footer a {
+            color: #a1a1a6;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer a:hover {
+            color: #f5f5f7;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.75rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+                margin-bottom: 2.5rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .feature {
+                padding: 2rem 1.5rem;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 4rem 0 3rem;
+            }
+
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo">TimeKeep</div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>TimeKeep</h1>
+                <p>Track your time with precision and generate detailed reports effortlessly. Perfect for managing projects and staying organized.</p>
+                
+                <div class="app-store-buttons">
+                    <a href="https://apps.apple.com/app/id6738052062" class="app-store-button" target="_blank">
+                        Download on the App Store
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">Powerful Time Tracking</h2>
+                <p class="section-subtitle">TimeKeep helps you track time accurately and manage your projects efficiently.</p>
+                
+                <div class="features-grid">
+                    <div class="feature">
+                        <div class="feature-icon">⏱</div>
+                        <h3>Precise Time Tracking</h3>
+                        <p>Track your time with second-level precision. Perfect for billable hours and project management.</p>
+                    </div>
+                    
+                    <div class="feature">
+                        <div class="feature-icon">📋</div>
+                        <h3>Detailed Reports</h3>
+                        <p>Generate comprehensive time reports for your projects. Export and share in various formats.</p>
+                    </div>
+                    
+                    <div class="feature">
+                        <div class="feature-icon">📈</div>
+                        <h3>Analytics & Insights</h3>
+                        <p>Understand your productivity patterns with comprehensive analytics and time tracking insights.</p>
+                    </div>
+                    
+                    <div class="feature">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Custom Presets</h3>
+                        <p>Create custom presets for your most common projects and tasks for quick time entry.</p>
+                    </div>
+                    
+                    <div class="feature">
+                        <div class="feature-icon">💲</div>
+                        <h3>Billable Rate Tracking</h3>
+                        <p>Set different billable rates for different projects and clients. Automatic earnings calculations.</p>
+                    </div>
+                    
+                    <div class="feature">
+                        <div class="feature-icon">🔔</div>
+                        <h3>Smart Notifications</h3>
+                        <p>Get reminders for break times, daily goals, and weekly targets to stay productive.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <a href="https://docs.google.com/document/d/1t_NJdU7ifJsraXoXgV1LDgreY4KeHl1fTMctWx4D1XY/edit?usp=sharing" target="_blank">Privacy Policy</a>
+        </div>
+    </footer>
+</body>
+</html>
